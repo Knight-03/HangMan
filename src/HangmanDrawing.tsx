@@ -116,7 +116,6 @@ function HangmanDrawing({ numberOfGuesses } : HangmanDrawingProps) {
         <div style={{position:"relative"}}>
             {BODY_PARTS.slice(0,numberOfGuesses)}
 
-            
             <div style={{
                 height:"400px",
                 width: "10px",
