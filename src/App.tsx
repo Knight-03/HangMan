@@ -9,7 +9,6 @@ function getWord() {
 }
 function App() {
   const [wordToGuess, setWordToGuess] = useState(getWord);
-  console.log(wordToGuess);
   const [guessedLetters, setGuessLetters] = useState<string[]>([]);
 
   // returning the letter which are not in wordToGuess cuz we don't have to show them hangmanWord
@@ -67,19 +66,9 @@ function App() {
   return (
     <div
       style={{
-        maxWidth: "800px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "2rem",
-        margin: "0 auto",
-        alignItems: "center",
+        width:"100vw"
       }}
     >
-      <div style={{ fontSize: "2rem", textAlign: "center" }}>
-        {isWinner && "Winner Winner Chicken Dinner 😋😋!"}
-        {isLoser && "Losser Losser Felling Bitter 🥺🫂!"}
-      </div>
-
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
 
       <HangmanWord 
@@ -87,8 +76,7 @@ function App() {
         guessedLetters={guessedLetters} 
         wordToGuess={wordToGuess} 
       />
-      <div style={{ alignSelf: "stretch" }}>
-        <Keyboard
+        <Keyboard 
           disabled = {isLoser || isWinner}
           activeLetters={guessedLetters.filter((letter) =>
             wordToGuess.includes(letter)
@@ -96,7 +84,6 @@ function App() {
           inactiveLetters={incorrectLetters}
           addGuessedLetters={addGuessedLetter}
         />
-      </div>
     </div>
   );
 }

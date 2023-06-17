@@ -1,67 +1,44 @@
 import styles from "./Keyboard.module.css";
-
-const KEYS = [
-  "q",
-  "w",
-  "e",
-  "r",
-  "t",
-  "y",
-  "u",
-  "i",
-  "o",
-  "p",
-  "a",
-  "s",
-  "d",
-  "f",
-  "g",
-  "h",
-  "j",
-  "k",
-  "l",
-  "z",
-  "x",
-  "c",
-  "v",
-  "b",
-  "n",
-  "m",
+const Rows = [
+  ["a", "b", "c", "d", "e", "f", "g"],
+  ["h", "i", "j", "k", "l", "m", "n"],
+  ["o", "p", "q", "r", "s", "t", "u"],
+  ["","v", "w", "x", "y", "z", ""]
 ];
 
+type KeyboardProps = {
+  activeLetters: string[];
+  inactiveLetters: string[];
+  addGuessedLetters: (letter: string) => void;
+  disabled: boolean;
+};
 
-type KeyboardProps  = {
-  activeLetters : string[]
-  inactiveLetters : string[]
-  addGuessedLetters : (letter : string) => void
-  disabled : boolean
-}
-
-function Keyboard({ activeLetters, inactiveLetters, addGuessedLetters,disabled = false} : KeyboardProps) {
+function Keyboard({
+  activeLetters,
+  inactiveLetters,
+  addGuessedLetters,
+  disabled = false,
+}: KeyboardProps) {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(75px,1fr))",
-        gap: ".5rem",
-      }}
-    >
-      {KEYS.map((key) => {
-        const isActive = activeLetters.includes(key);
-        const isInActive = inactiveLetters.includes(key);
-        return (
-            <button 
-              onClick={() => addGuessedLetters(key)}  
-              className={
-                `${styles.btn} ${isActive ? styles.active : ""}  ${isInActive ? styles.inactive : ""}`
-              } 
-              disabled={isInActive || isActive || disabled}
-              key={key}
+    <div className={styles.keyboardContainer}>
+      {Rows.map((keys, rowIndex) => (
+        <div key={rowIndex} className={styles.ColumContainer}>
+          {keys.map((key, cellIndex) => (
+            <button
+              key={cellIndex}
+              onClick={() => addGuessedLetters(key)}
+              className={`${styles.btn} ${
+                activeLetters.includes(key) ? styles.active : ""
+              } ${
+                inactiveLetters.includes(key) ? styles.inactive : ""
+              }`}
+              disabled={inactiveLetters.includes(key) || activeLetters.includes(key) || disabled}
             >
-               {key}
-          </button>
-        );
-      })}
+              {key === "" ? disabled : key}
+            </button>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }

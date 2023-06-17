@@ -1,25 +1,76 @@
-.btn{
-    width: 100%;
-    border: 3px solid black;
-    background: none;
-    aspect-ratio: 1 / 1;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    padding: .5rem;
-    font-weight: bold;
-    cursor: pointer;
-    color: magenta;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Merriweather:ital,wght@0,300;1,300&family=Square+Peg&display=swap');
+.keyboardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  position: absolute;
+  bottom: 90px;
+  right: 10px;
+}
+.ColumContainer{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ 
+}
+.btn {
+  width: 10%;
+  border: 3px solid transparent;
+  background: none;
+  aspect-ratio: 1 / 1;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: magenta;
 }
 
-.btn.active{
-    background-color: hsl(185, 99%, 15%);
-    color: white;
+.btn.active {
+  background-color: hsl(185, 99%, 15%);
+  color: white;
 }
-.btn.inactive{
-    opacity: .3;
-    color: black;
+.btn.inactive {
+  opacity: 0.3;
+  color: black;
 }
 .btn:hover:not(:disabled),
 .btn:focus:not(:disabled) {
-    background-color: #018c98;
+  background-color: #018c98;
+}
+
+/* Modal Styles */
+
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.modalContent:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add white shadow on hover */
+}
+
+.modalContent h2 {
+  margin-bottom: 1rem;
+}
+
+.modalContent button {
+  margin-top: 1rem;
 }
