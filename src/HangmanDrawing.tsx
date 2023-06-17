@@ -6,9 +6,9 @@ function Part(emoji:string) {
     const HORIZON = (
         <div style={{
             height:"10px",
-            width: "200px",
+            width: "230px",
             background:"magenta",
-            marginLeft : "120px"
+            marginLeft : "145px"
         }}/>
     )
     
@@ -132,7 +132,12 @@ function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
     }, [numberOfGuesses]);
   
     return (
-      <div style={{ position: 'relative' }}>
+      <div style={{ 
+            position: 'absolute', 
+            top:"180px",
+            left:"98px"
+            
+        }}>
         {BODY_PARTS.slice(0, numberOfGuesses)}
   
         <div
@@ -140,14 +145,14 @@ function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
             height: '400px',
             width: '10px',
             background: 'magenta',
-            marginLeft: '120px',
+            marginLeft: '145px',
           }}
         />
   
         <div
           style={{
             height: '10px',
-            width: '250px',
+            width: '300px',
             background: 'magenta',
           }}
         />
