@@ -7,7 +7,7 @@ function Part(emoji:string) {
         <div style={{
             height:"10px",
             width: "230px",
-            background:"magenta",
+            background:"#015d6d",
             marginLeft : "145px"
         }}/>
     )
@@ -16,7 +16,7 @@ function Part(emoji:string) {
         <div style={{
             height:"50px",
             width: "10px",
-            background:"magenta",
+            background:"#015d6d",
             position:"absolute",  
             top : 0,
             right : 0,
@@ -30,7 +30,7 @@ function Part(emoji:string) {
                 height: '60px',
                 borderRadius: '100%',
                 background: `url(${emoji}) center center`,
-                border: '4px solid magenta',
+                border: '4px solid #015d6d',
                 position: 'absolute',
                 top: '50px',
                 right: '-30px',
@@ -43,7 +43,7 @@ function Part(emoji:string) {
                 width: '10PX',
                 height : "100PX", 
                 position: "absolute",
-                background : "magenta",
+                background : "#015d6d",
                 top : "115px",
                 right: 0,
     
@@ -56,7 +56,7 @@ function Part(emoji:string) {
                 width: '100PX',
                 height : "10PX", 
                 position: "absolute",
-                background : "magenta",
+                background : "#015d6d",
                 top : "150px",
                 right: "-100px",
                 rotate : "-30deg",
@@ -70,7 +70,7 @@ function Part(emoji:string) {
                 width: '100PX',
                 height : "10PX", 
                 position: "absolute",
-                background : "magenta",
+                background : "#015d6d",
                 top : "150px",
                 right: "10px",
                 rotate : "30deg",
@@ -84,7 +84,7 @@ function Part(emoji:string) {
                 width: '100PX',
                 height : "10PX", 
                 position: "absolute",
-                background : "magenta",
+                background : "#015d6d",
                 top : "205px",
                 right: "-90px",
                 rotate : "60deg",
@@ -98,7 +98,7 @@ function Part(emoji:string) {
                 width: '100PX',
                 height : "10PX", 
                 position: "absolute",
-                background : "magenta",
+                background : "#015d6d",
                 top : "205px",
                 right: 0,
                 rotate : "-60deg",
@@ -144,7 +144,7 @@ function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
           style={{
             height: '400px',
             width: '10px',
-            background: 'magenta',
+            background: '#015d6d',
             marginLeft: '145px',
           }}
         />
@@ -153,7 +153,7 @@ function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
           style={{
             height: '10px',
             width: '300px',
-            background: 'magenta',
+            background: '#015d6d',
           }}
         />
       </div>

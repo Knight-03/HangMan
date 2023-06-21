@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Merriweather:ital,wght@0,300;1,300&family=Square+Peg&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
 .keyboardContainer {
   display: flex;
   flex-direction: column;
@@ -22,15 +26,16 @@
   font-family: 'Dancing Script', cursive;
   font-size: 2.5rem;
   text-transform: uppercase;
-  padding: 0.5rem;
+  padding: 0.3rem;
   font-weight: bold;
   cursor: pointer;
-  color: magenta;
+  color: #0a8893; 
 }
 
 .btn.active {
-  background-color: hsl(185, 99%, 15%);
+  background-color: #7ec5b6;
   color: white;
+  border-radius: 50%;
 }
 .btn.inactive {
   opacity: 0.3;
@@ -38,7 +43,8 @@
 }
 .btn:hover:not(:disabled),
 .btn:focus:not(:disabled) {
-  background-color: #018c98;
+  background-color: #a7dde2;
+  border-radius: 50%;
 }
 
 /* Modal Styles */
@@ -74,3 +80,13 @@
 .modalContent button {
   margin-top: 1rem;
 }
+
+/* @media screen ,(width <= 1280) {
+  body{
+    overflow: hidden;
+  }
+  .keyboardContainer {
+    bottom: 160px;
+    left: 40%;
+  }
+} */
