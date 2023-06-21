@@ -1,0 +1,54 @@
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blurBackground {
+  backdrop-filter: blur(5px); /* Adjust the blur intensity as needed */
+}
+.modalContent {
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(212, 136, 136, 0.68);
+  transition: box-shadow 0.3s ease-in-out;
+  text-align: center;
+}
+
+.modalContent:hover {
+  box-shadow: 4px  4px 8px rgba(253, 180, 160, 0.936); /* Add white shadow on hover */
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.modalContent h2 {
+  font-family: monospace;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.modalContent button {
+  margin-top: 1rem;
+  padding: .5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #018793;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  &:hover{
+    cursor: pointer;
+    opacity:.8;
+    text-decoration: none;
+    outline:none;
+    filter: brightness(70%);
+   
+  }
+}
