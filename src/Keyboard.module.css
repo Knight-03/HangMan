@@ -81,12 +81,12 @@
   margin-top: 1rem;
 }
 
-/* @media screen ,(width <= 1280) {
+@media screen ,(width <= 1280) {
   body{
     overflow: hidden;
   }
   .keyboardContainer {
     bottom: 160px;
-    left: 40%;
+    left: 30%;
   }
-} */
+}

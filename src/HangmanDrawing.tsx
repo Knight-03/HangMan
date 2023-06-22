@@ -126,7 +126,7 @@ function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
       if (numberOfGuesses >= 6) {
         setEmoji(sad);
       } 
-      if(numberOfGuesses >= 8) {
+      if(numberOfGuesses >= 7) {
         setEmoji(cry);
       }
     }, [numberOfGuesses]);
