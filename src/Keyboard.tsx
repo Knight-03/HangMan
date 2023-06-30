@@ -22,9 +22,6 @@ function Keyboard({
   addGuessedLetters,
   disabled = false,
 }: KeyboardProps) {
-  addGuessedLetters,
-  disabled = false,
-}: KeyboardProps) {
   return (
     <div className={styles.keyboardContainer}>
       {Rows.map((keys, rowIndex) => (
