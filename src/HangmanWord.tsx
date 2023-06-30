@@ -10,7 +10,12 @@ function HangmanWord({ guessedLetters, wordToGuess , revel = false} : HangmanWor
         <div    
             style={{
                 display:"flex",
+                flexDirection:"row",
                 gap:".25em",
+                position:"absolute",
+                left:"700px",
+                top:"60px",
+
                 fontSize:"6rem",
                 fontWeight: "bold",
                 color:"#018793",
