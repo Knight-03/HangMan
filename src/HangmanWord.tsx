@@ -20,6 +20,7 @@ function HangmanWord({ guessedLetters, wordToGuess , revel = false} : HangmanWor
                 fontWeight: "bold",
                 color:"#018793",
                 textTransform:"uppercase",
+                fontFamily:"monospace",
             }}
         >
             {wordToGuess.split("").map((letter,index)=> (
