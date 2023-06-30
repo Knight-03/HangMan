@@ -3,19 +3,25 @@ const Rows = [
   ["a", "b", "c", "d", "e", "f", "g"],
   ["h", "i", "j", "k", "l", "m", "n"],
   ["o", "p", "q", "r", "s", "t", "u"],
-  ["","v", "w", "x", "y", "z", ""]
+  ["v", "w", "x", "y", "z", " ↵ "]
+
 ];
 
 type KeyboardProps = {
   activeLetters: string[];
   inactiveLetters: string[];
   addGuessedLetters: (letter: string) => void;
+  onEnter : (key : string) => void; 
   disabled: boolean;
 };
 
 function Keyboard({
   activeLetters,
   inactiveLetters,
+  onEnter,
+  addGuessedLetters,
+  disabled = false,
+}: KeyboardProps) {
   addGuessedLetters,
   disabled = false,
 }: KeyboardProps) {
@@ -25,8 +31,10 @@ function Keyboard({
         <div key={rowIndex} className={styles.ColumContainer}>
           {keys.map((key, cellIndex) => (
             <button
-              key={cellIndex}
-              onClick={() => addGuessedLetters(key)}
+              key={cellIndex} 
+              onClick={() => {
+                {key == " ↵ " ? onEnter(key) : addGuessedLetters(key)}
+              }}
               className={`${styles.btn} ${
                 activeLetters.includes(key) ? styles.active : ""
               } ${
@@ -34,7 +42,7 @@ function Keyboard({
               }`}
               disabled={inactiveLetters.includes(key) || activeLetters.includes(key) || disabled}
             >
-              {key === "" ? disabled : key}
+              {key}
             </button>
           ))}
         </div>

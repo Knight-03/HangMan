@@ -13,7 +13,7 @@ function HangmanWord({ guessedLetters, wordToGuess , revel = false} : HangmanWor
                 flexDirection:"row",
                 gap:".25em",
                 position:"absolute",
-                left:"800px",
+                left:"700px",
                 top:"60px",
 
                 fontSize:"6rem",

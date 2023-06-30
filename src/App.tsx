@@ -3,6 +3,7 @@ import word from "./wordList.json";
 import HangmanDrawing from "./HangmanDrawing";
 import HangmanWord from "./HangmanWord";
 import Keyboard from "./Keyboard";
+import PopUp from "./PopUp";
 
 function getWord() {
   return word[Math.floor(Math.random() * word.length)];
@@ -20,7 +21,7 @@ function App() {
   const isWinner = wordToGuess
     .split("")
     .every((letter) => guessedLetters.includes(letter));
-     
+    
   const addGuessedLetter = useCallback(
     (letter: string) => {
       if (guessedLetters.includes(letter) || isLoser || isWinner) return;
@@ -63,6 +64,19 @@ function App() {
     };  
   },[])
 
+  const StartNewGame = () => {
+
+    setGuessLetters([]);
+    setWordToGuess(getWord());
+
+  }
+  const onEnter = (key: string) => {
+    if(key == " ↵ ")
+    {
+      setGuessLetters([]);
+      setWordToGuess(getWord());
+    }
+  }
   return (
     <div
       style={{
@@ -83,6 +97,13 @@ function App() {
           )}
           inactiveLetters={incorrectLetters}
           addGuessedLetters={addGuessedLetter}
+          onEnter = {onEnter}
+        />
+
+        <PopUp 
+          isWinner = {isWinner}
+          isLoser = {isLoser}
+          NewGame = {StartNewGame}
         />
     </div>
   );

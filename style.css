@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Merriweather:ital,wght@0,300;1,300&family=Square+Peg&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -9,5 +9,6 @@ body{
     height: 100vh;
     display: flex;
     background-color: black;
-    background: url(./src/Images/brick-wall.png)
+    background: url(./src/Images/brick-wall.png);
+    font-family: 'Dancing Script', cursive;
 }
