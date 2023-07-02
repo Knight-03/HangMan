@@ -80,13 +80,3 @@
 .modalContent button {
   margin-top: 1rem;
 }
-
-@media screen ,(width <= 1280) {
-  body{
-    overflow: hidden;
-  }
-  .keyboardContainer {
-    bottom: 160px;
-    left: 30%;
-  }
-}
